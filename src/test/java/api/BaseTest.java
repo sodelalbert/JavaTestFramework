@@ -15,7 +15,7 @@ public abstract class BaseTest {
     @BeforeAll
     static void setUpAll() {
         playwright = Playwright.create();
-        System.out.println(Config.get("url.backend"));
+        System.out.println(Config.get("base.url"));
     }
 
     @AfterAll

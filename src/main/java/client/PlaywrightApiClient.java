@@ -18,7 +18,7 @@ public class PlaywrightApiClient {
     public PlaywrightApiClient(Playwright playwright) {
 
         this.requestContext = playwright.request().newContext(new APIRequest.NewContextOptions().
-                setBaseURL(Config.get("url.backend")).
+                setBaseURL(Config.get("base.url")).
                 setExtraHTTPHeaders(headers));
 
     }
