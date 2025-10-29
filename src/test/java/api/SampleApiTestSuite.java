@@ -1,6 +1,8 @@
 package api;
 
 import client.PlaywrightApiClient;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.microsoft.playwright.junit.UsePlaywright;
 import org.junit.jupiter.api.Test;
 
@@ -21,13 +23,19 @@ public class SampleApiTestSuite extends BaseTest {
 
         // Parsing response
         var response = pac.get("/posts/1", headers);
-
-
-        //JsonObject jResponse = new Gson().fromJson(response.text(), JsonObject.class);
-
         System.out.println(response);
 
+
+
+
         // Setting Body
+
+//        Map<String, String> data = new HashMap<>();
+//        data.put("title", "[Bug] report 1");
+//        data.put("body", "Bug description");
+
+//        APIResponse newIssue = request.post("/repos/" + USER + "/" + REPO + "/issues",
+//                RequestOptions.create().setData(data)
 
     }
 
