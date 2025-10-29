@@ -1,9 +1,6 @@
 package api;
 
 import client.PlaywrightApiClient;
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import com.microsoft.playwright.junit.UsePlaywright;
 import org.junit.jupiter.api.Test;
 
@@ -30,8 +27,7 @@ public class SampleApiTestSuite extends BaseTest {
 
         System.out.println(response);
 
-       // Setting Body
-
+        // Setting Body
 
     }
 

@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.microsoft.playwright.APIRequest;
 import com.microsoft.playwright.APIRequestContext;
-import com.microsoft.playwright.APIResponse;
 import com.microsoft.playwright.Playwright;
 import config.Config;
 
@@ -18,9 +17,9 @@ public class PlaywrightApiClient {
 
     public PlaywrightApiClient(Playwright playwright) {
 
-        this.requestContext = playwright.request().newContext(new APIRequest.NewContextOptions()
-                .setBaseURL(Config.get("url.backend"))
-                .setExtraHTTPHeaders(headers));
+        this.requestContext = playwright.request().newContext(new APIRequest.NewContextOptions().
+                setBaseURL(Config.get("url.backend")).
+                setExtraHTTPHeaders(headers));
 
     }
 
@@ -39,8 +38,5 @@ public class PlaywrightApiClient {
         var response = requestContext.get(endpoint);
         return new Gson().fromJson(response.text(), JsonObject.class);
     }
-
     // TODO: Finalize POST, PUT and DELETE
-
-
 }

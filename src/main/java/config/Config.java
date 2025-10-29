@@ -21,7 +21,6 @@ public final class Config {
     }
 
     private Config() {
-        // Utility class - prevent instantiation
     }
 
 

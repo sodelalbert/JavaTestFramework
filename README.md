@@ -7,7 +7,7 @@ Minimal Java + Maven test framework using JUnit Jupiter and Microsoft Playwright
 - Maven 3.6+
 
 ## Quick Start
-1) Install dependencies
+1) Install dependencies 
 ```
 mvn clean install
 ```

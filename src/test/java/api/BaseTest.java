@@ -25,7 +25,7 @@ public abstract class BaseTest {
 
     @BeforeEach
     void setUp() {
-        var playwright = Playwright.create();
+//        var playwright = Playwright.create();
 
 //        Map<String, String> headers = new HashMap<>();
 //        headers.put("Accept", "application/vnd.github.v3+json");
@@ -39,7 +39,6 @@ public abstract class BaseTest {
 //        System.out.println(Arrays.toString(response.body()));
 //
 //        JsonArray json = new Gson().fromJson(response.text(), JsonArray.class);
-
 
     }
 
