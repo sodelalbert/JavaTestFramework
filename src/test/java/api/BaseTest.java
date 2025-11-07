@@ -1,8 +1,8 @@
 package api;
 
+import client.PlaywrightApiClient;
 import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.junit.UsePlaywright;
-import config.Config;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -11,11 +11,11 @@ import org.junit.jupiter.api.BeforeEach;
 @UsePlaywright
 public abstract class BaseTest {
     public static Playwright playwright;
+    public static PlaywrightApiClient playwrightApiClient;
 
     @BeforeAll
     static void setUpAll() {
-        playwright = Playwright.create();
-        System.out.println(Config.get("base.url"));
+
     }
 
     @AfterAll
@@ -25,20 +25,8 @@ public abstract class BaseTest {
 
     @BeforeEach
     void setUp() {
-//        var playwright = Playwright.create();
-
-//        Map<String, String> headers = new HashMap<>();
-//        headers.put("Accept", "application/vnd.github.v3+json");
-//
-//
-//        APIRequestContext request = playwright.request().newContext(new APIRequest.NewContextOptions()
-//                .setBaseURL(Config.get("url.backend"))
-//                .setExtraHTTPHeaders(headers));
-//
-//        APIResponse response = request.get("/posts/1");
-//        System.out.println(Arrays.toString(response.body()));
-//
-//        JsonArray json = new Gson().fromJson(response.text(), JsonArray.class);
+        playwright = Playwright.create();
+        playwrightApiClient = new PlaywrightApiClient(playwright);
 
     }
 
